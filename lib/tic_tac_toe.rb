@@ -84,8 +84,8 @@ def won?(board)
 end
 
 def full?(board)
-  board.all? do |move|
-    move != " "
+  board.all? do |currentMove|
+    currentMove != " "
   end
 end
 
