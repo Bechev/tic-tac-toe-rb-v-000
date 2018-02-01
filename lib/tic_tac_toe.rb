@@ -95,7 +95,7 @@ def draw?(board)
 end
 
 def over?(board)
-  over = (won?(board) || full?(board) || draw?(board))
+  over = (won?(board) || draw?(board))
   over ? true : false
 end
 
