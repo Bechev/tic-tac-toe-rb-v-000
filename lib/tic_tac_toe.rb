@@ -53,7 +53,7 @@ def turn(board)
     index = input_to_index(input)
     valid_move = valid_move?(board, index)
   end
-  move(board,index)
+  move(board,index, current_player(board))
   display_board(board)
 end
 
@@ -110,7 +110,7 @@ end
 
 def play(board)
   until over?(board)
-    turn(board, current_player(board))
+    turn(board)
   end
   if won?(board) == true
     puts "Congratulations #{winner(board)}, you won!"
