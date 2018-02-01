@@ -71,7 +71,6 @@ end
 def current_player(board)
   number_of_turns = turn_count(board) % 2
   number_of_turns == 0 ? "X" : "O"
-
 end
 
 
@@ -86,6 +85,7 @@ end
 def full?(board)
   board.all? do |move|
     move != " "
+  end
 end
 
 def draw?(board)
@@ -107,13 +107,14 @@ def winner(board)
   end
 end
 
-def play
+
+def play(board)
   until over?(board)
     turn(board)
   end
-  if won?(board)
+  if won?(board) == true
     puts "Congratulations #{winner(board)}, you won!"
-  elsif draw?(board)
+  elsif draw?(board)  == true
     puts "It's a tie!"
   end
 end
